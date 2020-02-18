@@ -30,7 +30,7 @@ var romanToInt = function(s) {
   let lastD = s.lastIndexOf("D");
   let lastM = s.lastIndexOf("M");
   //creating condition where I can add everything easily
-  //No I's come before X or V
+  //if no I's come before X or V
   if (firstI > firstX && firstI > firstV) {
     //all V's are in the right place
     //No X's come before L or C
@@ -47,6 +47,7 @@ var romanToInt = function(s) {
     }
   }
 
+  // if I does come before an X or a V
   if (firstI !== -1) {
     if (firstI < firstV) {
       if (firstV === firstI + 1) {
@@ -56,15 +57,30 @@ var romanToInt = function(s) {
       sum += 9;
     }
   }
-  console.log(sum);
+  //X does not come before L or C
+  // if(firstX>firstL && firstX>firstC){
+  //     for(let i=0; i<s.length; i++){
+
+  //     }
+  // }
+  //X  comes before L or C
+  if (firstX !== -1) {
+    if (firstX < firstL) {
+      sum += 40;
+    } else if (firstX < firstC || firstX < lastC) {
+      sum += 90;
+    }
+  }
+
+  return sum;
 };
 
-romanToInt("III");
-romanToInt("IV");
-romanToInt("IX");
-romanToInt("LVIII");
-romanToInt("MCMXCIV");
-romanToInt("XV");
+console.log(romanToInt("III") + " should be 3");
+console.log(romanToInt("IV") + " should be 4");
+console.log(romanToInt("IX") + " should be 9");
+console.log(romanToInt("LVIII") + " should be 58");
+console.log(romanToInt("MCMXCIV") + " should be 1994");
+console.log(romanToInt("XV") + " should be 15");
 
 // Symbol       Value
 // I             1
