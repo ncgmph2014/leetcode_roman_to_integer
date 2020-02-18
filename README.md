@@ -27,26 +27,22 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 
 Input: "III"
 Output: 3
-Example 2:
 
 ### Example 2
 
 Input: "IV"
 Output: 4
-Example 3:
 
 ### Example 3
 
 Input: "IX"
 Output: 9
-Example 4:
 
 ### Example 4
 
 Input: "LVIII"
 Output: 58
 Explanation: L = 50, V= 5, III = 3.
-Example 5:
 
 ### Example 5
 

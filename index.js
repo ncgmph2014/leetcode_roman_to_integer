@@ -30,9 +30,21 @@ var romanToInt = function(s) {
   let lastD = s.lastIndexOf("D");
   let lastM = s.lastIndexOf("M");
   //creating condition where I can add everything easily
-  //All "I"s are in a convient place
+  //No I's come before X or V
   if (firstI > firstX && firstI > firstV) {
-    console.log(s);
+    //all V's are in the right place
+    //No X's come before L or C
+    for (let i = 0; i < s.length; i++) {
+      if (s.charAt(i) === "I") {
+        sum++;
+      }
+      if (s.charAt(i) === "V") {
+        sum += 5;
+      }
+      if (s.charAt(i) === "X") {
+        sum += 10;
+      }
+    }
   }
 
   if (firstI !== -1) {
@@ -44,7 +56,7 @@ var romanToInt = function(s) {
       sum += 9;
     }
   }
-  //   console.log(sum);
+  console.log(sum);
 };
 
 romanToInt("III");
