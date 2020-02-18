@@ -1,29 +1,17 @@
 /**
  * @param {string} s
  * @return {number}
+ *
  */
+
+console.log("The html and js are connected");
 var romanToInt = function(s) {
   ///i need a function that tests whether
   //I comes before V or X
   //X  comes before L or C
   //C comes before D or M
   //this will not work for the last case
-  let firstI = 0;
-  let firstV = 0;
-  let firstX = 0;
-  let firstL = 0;
-  let firstC = 0;
-  let firstD = 0;
-  let firstM = 0;
-  for (let i = s.length - 1; i >= 0; i--) {}
-  let lastI = 0;
-  let lastV = 0;
-  let lastX = 0;
-  let lastL = 0;
-  let lastC = 0;
-  let lastD = 0;
-  let lastM = 0;
-  for (let i = 0; i < s.length; i++) {}
+  //i feel like what i have now is not the most efficient
 };
 
 romanToInt("III");
