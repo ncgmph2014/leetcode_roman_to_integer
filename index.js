@@ -58,13 +58,21 @@ var romanToInt = function(s) {
     }
   }
   //X does not come before L or C
-  // if(firstX>firstL && firstX>firstC){
-  //     for(let i=0; i<s.length; i++){
-
-  //     }
-  // }
-  //X  comes before L or C
+  //if there is no X but it is more than 10, i need to account for that too
+  //if there is an X
   if (firstX !== -1) {
+    if (firstX > firstL && firstX > firstC) {
+      for (let i = 0; i < s.length; i++) {
+        if (s.charAt(i) === "L") {
+          console.log(i);
+        }
+        if (s.charAt(i) === "C") {
+          sum += 100;
+        }
+      }
+    }
+    //X  comes before L or C
+
     if (firstX < firstL) {
       sum += 40;
     } else if (firstX < firstC || firstX < lastC) {
