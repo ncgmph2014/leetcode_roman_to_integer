@@ -14,7 +14,7 @@ var romanToInt = function(s) {
   //   console.log(s.search("I") + " for " + s);
   //   // s.lastIndexOf("letter") does that I was doing before (finds the last occurance of the letter I am looking for) but without the hassle
   //   console.log(s.lastIndexOf("I"));
-
+  let sum = 0;
   let firstI = s.search("I"); //because I will forget what it's doing if I don't label it
   let firstV = s.search("V");
   let firstX = s.search("X");
@@ -29,6 +29,22 @@ var romanToInt = function(s) {
   let lastC = s.lastIndexOf("C");
   let lastD = s.lastIndexOf("D");
   let lastM = s.lastIndexOf("M");
+  //creating condition where I can add everything easily
+  //All "I"s are in a convient place
+  if (firstI > firstX && firstI > firstV) {
+    console.log(s);
+  }
+
+  if (firstI !== -1) {
+    if (firstI < firstV) {
+      if (firstV === firstI + 1) {
+        sum += 4;
+      }
+    } else if (firstI < firstX) {
+      sum += 9;
+    }
+  }
+  //   console.log(sum);
 };
 
 romanToInt("III");
