@@ -15,7 +15,15 @@ var romanToInt = function(s) {
   let firstC = 0;
   let firstD = 0;
   let firstM = 0;
-  for (let i = s.length - 1; s >= 0; i--) {}
+  for (let i = s.length - 1; i >= 0; i--) {}
+  let lastI = 0;
+  let lastV = 0;
+  let lastX = 0;
+  let lastL = 0;
+  let lastC = 0;
+  let lastD = 0;
+  let lastM = 0;
+  for (let i = 0; i < s.length; i++) {}
 };
 
 romanToInt("III");
