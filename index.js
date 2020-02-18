@@ -46,6 +46,16 @@ var romanToInt = function(s) {
       }
     }
   }
+  if (firstI === -1) {
+    for (let i = 0; i < s.length; i++) {
+      if (s.charAt(i) === "V") {
+        sum += 5;
+      }
+      if (s.charAt(i) === "X") {
+        sum += 10;
+      }
+    }
+  }
 
   // if I does come before an X or a V
   if (firstI !== -1) {
@@ -54,21 +64,34 @@ var romanToInt = function(s) {
         sum += 4;
       }
     } else if (firstI < firstX) {
-      sum += 9;
+      if (firstX === firstI + 1) sum += 9;
     }
   }
   //X does not come before L or C
   //if there is no X but it is more than 10, i need to account for that too
+  if (firstX === -1) {
+    for (let i = 0; i < s.length; i++) {
+      if (s.charAt(i) === "L") {
+        sum += 50;
+      }
+      if (s.charAt(i) === "C") {
+        sum += 100;
+      }
+    }
+  }
   //if there is an X
+
   if (firstX !== -1) {
     if (firstX > firstL && firstX > firstC) {
       for (let i = 0; i < s.length; i++) {
         if (s.charAt(i) === "L") {
-          console.log(i);
+          sum += 50;
         }
-        if (s.charAt(i) === "C") {
-          sum += 100;
-        }
+
+        //this is wrong somehow
+        // if (s.charAt(i) === "C") {
+        //   sum += 100;
+        // }
       }
     }
     //X  comes before L or C
