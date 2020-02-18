@@ -10,8 +10,25 @@ var romanToInt = function(s) {
   //I comes before V or X
   //X  comes before L or C
   //C comes before D or M
-  //this will not work for the last case
-  //i feel like what i have now is not the most efficient
+  //s.search("I") does the same thing i did before (searches for the first occurance) but more elegantly and if it's not there it will give us -1 which I need
+  //   console.log(s.search("I") + " for " + s);
+  //   // s.lastIndexOf("letter") does that I was doing before (finds the last occurance of the letter I am looking for) but without the hassle
+  //   console.log(s.lastIndexOf("I"));
+
+  let firstI = s.search("I"); //because I will forget what it's doing if I don't label it
+  let firstV = s.search("V");
+  let firstX = s.search("X");
+  let firstL = s.search("L");
+  let firstC = s.search("C");
+  let firstD = s.search("D");
+  let firstM = s.search("M");
+  let lastI = s.lastIndexOf("I");
+  let lastV = s.lastIndexOf("V");
+  let lastX = s.lastIndexOf("X");
+  let lastL = s.lastIndexOf("L");
+  let lastC = s.lastIndexOf("C");
+  let lastD = s.lastIndexOf("D");
+  let lastM = s.lastIndexOf("M");
 };
 
 romanToInt("III");
@@ -19,6 +36,7 @@ romanToInt("IV");
 romanToInt("IX");
 romanToInt("LVIII");
 romanToInt("MCMXCIV");
+romanToInt("XV");
 
 // Symbol       Value
 // I             1
