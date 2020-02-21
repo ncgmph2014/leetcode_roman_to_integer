@@ -33,13 +33,15 @@ var romanToInt = function(s) {
   // so M + CM
   console.log(" For " + s + " the first M is at index " + firstM);
   console.log(" the last M is at index " + lastM);
-  console.log("/////////////");
+  // console.log("///////////////////");
   console.log(" the first D is at " + firstD);
   console.log(" the last D is at " + lastD);
-  console.log("//////");
+  // console.log("//////////////////////");
   console.log(" the first C is at " + firstC);
   console.log(" the last C is at " + lastC);
-  console.log("/////////////");
+  // console.log("//////////////////");
+  console.log(" the first L is at " + firstL);
+  console.log(" the last L is at " + lastL);
   console.log("//////");
   console.log("//////");
 
@@ -120,12 +122,12 @@ var romanToInt = function(s) {
   return sum;
 };
 
-console.log(romanToInt("III") + " should be 3");
-console.log(romanToInt("IV") + " should be 4");
-console.log(romanToInt("IX") + " should be 9");
+// console.log(romanToInt("III") + " should be 3");
+// console.log(romanToInt("IV") + " should be 4");
+// console.log(romanToInt("IX") + " should be 9");
 console.log(romanToInt("LVIII") + " should be 58");
 console.log(romanToInt("MCMXCIV") + " should be 1994");
-console.log(romanToInt("XV") + " should be 15");
+// console.log(romanToInt("XV") + " should be 15");
 
 // Symbol       Value
 // I             1
