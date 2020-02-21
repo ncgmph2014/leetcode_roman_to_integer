@@ -29,6 +29,8 @@ var romanToInt = function(s) {
   let lastC = s.lastIndexOf("C");
   let lastD = s.lastIndexOf("D");
   let lastM = s.lastIndexOf("M");
+
+  console.log(" For " + s + " the first I is at " + firstI);
   //creating condition where I can add everything easily
   //if no I's come before X or V
   if (firstI > firstX && firstI > firstV) {
