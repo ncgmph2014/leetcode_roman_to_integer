@@ -29,8 +29,20 @@ var romanToInt = function(s) {
   let lastC = s.lastIndexOf("C");
   let lastD = s.lastIndexOf("D");
   let lastM = s.lastIndexOf("M");
+  //for the last one, we still need 1900 so 1000 + (1000-100)
+  // so M + CM
+  console.log(" For " + s + " the first M is at index " + firstM);
+  console.log(" the last M is at index " + lastM);
+  console.log("/////////////");
+  console.log(" the first D is at " + firstD);
+  console.log(" the last D is at " + lastD);
+  console.log("//////");
+  console.log(" the first C is at " + firstC);
+  console.log(" the last C is at " + lastC);
+  console.log("/////////////");
+  console.log("//////");
+  console.log("//////");
 
-  console.log(" For " + s + " the first I is at " + firstI);
   //creating condition where I can add everything easily
   //if no I's come before X or V
   if (firstI > firstX && firstI > firstV) {
