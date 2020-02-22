@@ -90,6 +90,7 @@ var romanToInt = function(s) {
       if (s.charAt(i) === "L") {
         sum += 50;
       }
+      //i have to account for different cases. I may change my method entirely
       if (s.charAt(i) === "C") {
         sum += 100;
       }
@@ -118,6 +119,14 @@ var romanToInt = function(s) {
       sum += 90;
     }
   }
+  if (firstC !== -1) {
+    console.log("this works");
+    if (firstC < firstD) {
+      sum += 400;
+    } else if (firstC < firstM || firstC < lastM) {
+      sum + 900;
+    }
+  }
 
   return sum;
 };
@@ -127,6 +136,7 @@ var romanToInt = function(s) {
 // console.log(romanToInt("IX") + " should be 9");
 console.log(romanToInt("LVIII") + " should be 58");
 console.log(romanToInt("MCMXCIV") + " should be 1994");
+console.log(romanToInt("CD") + " should be 400");
 // console.log(romanToInt("XV") + " should be 15");
 
 // Symbol       Value
