@@ -139,6 +139,7 @@ var romanToInt = function(s) {
 console.log(romanToInt("LVIII") + " should be 58");
 console.log(romanToInt("MCMXCIV") + " should be 1994");
 console.log(romanToInt("CD") + " should be 400");
+console.log(romanToInt("XIX") + "should be 19");
 // console.log(romanToInt("XV") + " should be 15");
 
 // Symbol       Value
