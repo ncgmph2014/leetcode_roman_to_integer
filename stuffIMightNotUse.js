@@ -145,3 +145,86 @@ if (firstC !== -1) {
     sum + 900;
   }
 }
+
+if (firstI > firstX && firstI > firstV) {
+  //all V's are in the right place
+  //No X's come before L or C
+
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) === "I") {
+      sum++;
+    }
+    if (s.charAt(i) === "V") {
+      sum += 5;
+    }
+    if (s.charAt(i) === "X") {
+      sum += 10;
+    }
+  }
+}
+if (firstI === -1) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) === "V") {
+      sum += 5;
+    }
+    if (s.charAt(i) === "X") {
+      sum += 10;
+    }
+  }
+}
+
+// if I does come before an X or a V
+if (firstI !== -1) {
+  if (firstI < firstV) {
+    if (firstV === firstI + 1) {
+      sum += 4;
+    }
+  } else if (firstI < firstX) {
+    if (firstX === firstI + 1) sum += 9;
+  }
+}
+//X does not come before L or C
+//if there is no X but it is more than 10, i need to account for that too
+if (firstX === -1) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) === "L") {
+      sum += 50;
+    }
+    //i have to account for different cases. I may change my method entirely
+    //does not work for CD
+    if (s.charAt(i) === "C") {
+      sum += 100;
+    }
+  }
+}
+//if there is an X
+
+if (firstX !== -1) {
+  if (firstX > firstL && firstX > firstC) {
+    for (let i = 0; i < s.length; i++) {
+      if (s.charAt(i) === "L") {
+        sum += 50;
+      }
+
+      //this is wrong somehow
+      // if (s.charAt(i) === "C") {
+      //   sum += 100;
+      // }
+    }
+  }
+  //X  comes before L or C
+
+  if (firstX < firstL) {
+    sum += 40;
+  } else if (firstX < firstC || firstX < lastC) {
+    sum += 90;
+  }
+}
+if (firstC !== -1) {
+  console.log("this works");
+  if (firstC < firstD) {
+    sum += 400;
+  } else if (firstC < firstM || firstC < lastM) {
+    sum + 900;
+  }
+}
