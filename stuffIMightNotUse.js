@@ -228,3 +228,19 @@ if (firstC !== -1) {
     sum + 900;
   }
 }
+
+//for the last one, we still need 1900 so 1000 + (1000-100)
+// so M + CM
+// console.log(" For " + s + " the first M is at index " + firstM);
+// console.log(" the last M is at index " + lastM);
+// // console.log("///////////////////");
+// console.log(" the first D is at " + firstD);
+// console.log(" the last D is at " + lastD);
+// // console.log("//////////////////////");
+// console.log(" the first C is at " + firstC);
+// console.log(" the last C is at " + lastC);
+// // console.log("//////////////////");
+// console.log(" the first L is at " + firstL);
+// console.log(" the last L is at " + lastL);
+// console.log("//////");
+// console.log("//////");
