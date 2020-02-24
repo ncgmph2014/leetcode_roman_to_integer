@@ -69,6 +69,7 @@ var romanToInt = function(s) {
     }
   }
 
+  //for 400 and 900
   if (firstC !== -1) {
     if (
       firstD - firstC === 1 ||
@@ -86,8 +87,38 @@ var romanToInt = function(s) {
       sum += 900;
     }
   }
-  //for 400 and 900
-
+  console.log(
+    "for " +
+      s +
+      ", the first m is at " +
+      firstM +
+      ", the first d is at " +
+      firstD +
+      ", the first c is at " +
+      firstC +
+      ", the first L is at " +
+      firstL +
+      ", the first X is at " +
+      firstX +
+      ", the first V is at " +
+      firstV +
+      ", the first is I at " +
+      firstI +
+      ", the last m is at " +
+      lastM +
+      ", the last d is at " +
+      lastD +
+      ", the last C is at " +
+      lastC +
+      ", the last L is at " +
+      lastL +
+      ", the last X is at " +
+      lastX +
+      ", the last V is at " +
+      lastV +
+      ", and the last is I at " +
+      lastI
+  );
   //creating condition where I can add everything easily
   //if no I's come before X or V
 
