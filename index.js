@@ -15,6 +15,7 @@ var romanToInt = function(s) {
   //   // s.lastIndexOf("letter") does that I was doing before (finds the last occurance of the letter I am looking for) but without the hassle
   //   console.log(s.lastIndexOf("I"));
   let sum = 0;
+  let includes40 = null;
   let firstI = s.search("I"); //because I will forget what it's doing if I don't label it
   let firstV = s.search("V");
   let firstX = s.search("X");
@@ -59,6 +60,7 @@ var romanToInt = function(s) {
       lastL - lastX === 1
     ) {
       sum += 40;
+      includes40 = "yes";
     } else if (
       firstC - firstX === 1 ||
       firstC - lastX === 1 ||
@@ -87,38 +89,70 @@ var romanToInt = function(s) {
       sum += 900;
     }
   }
-  console.log(
-    "for " +
-      s +
-      ", the first m is at " +
-      firstM +
-      ", the first d is at " +
-      firstD +
-      ", the first c is at " +
-      firstC +
-      ", the first L is at " +
-      firstL +
-      ", the first X is at " +
-      firstX +
-      ", the first V is at " +
-      firstV +
-      ", the first is I at " +
-      firstI +
-      ", the last m is at " +
-      lastM +
-      ", the last d is at " +
-      lastD +
-      ", the last C is at " +
-      lastC +
-      ", the last L is at " +
-      lastL +
-      ", the last X is at " +
-      lastX +
-      ", the last V is at " +
-      lastV +
-      ", and the last is I at " +
-      lastI
-  );
+  // console.log(
+  //   "for " +
+  //     s +
+  //     ", the first m is at " +
+  //     firstM +
+  //     ", the first d is at " +
+  //     firstD +
+  //     ", the first c is at " +
+  //     firstC +
+  //     ", the first L is at " +
+  //     firstL +
+  //     ", the first X is at " +
+  //     firstX +
+  //     ", the first V is at " +
+  //     firstV +
+  //     ", the first is I at " +
+  //     firstI +
+  //     ", the last m is at " +
+  //     lastM +
+  //     ", the last d is at " +
+  //     lastD +
+  //     ", the last C is at " +
+  //     lastC +
+  //     ", the last L is at " +
+  //     lastL +
+  //     ", the last X is at " +
+  //     lastX +
+  //     ", the last V is at " +
+  //     lastV +
+  //     ", and the last is I at " +
+  //     lastI
+  // );
+
+  //to add 1
+  //if I is after X or V
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) === "I" && i > lastX && i > lastV) {
+      sum++;
+    }
+    //to add 5 (V) not 4 (IV)
+    //two cases
+    if (firstV < firstI || firstI === -1) {
+      if (s.charAt(i) === "V") {
+        sum += 5;
+      }
+    }
+
+    //to add 10
+    if (firstX < firstI || firstI === -1) {
+      //works for 19 and doesn't mess up 444 but doesn't work for 15 for some reason
+      if (s.charAt(i) === "X" && i < lastI && includes40 === null) {
+        sum += 10;
+      }
+    }
+  }
+  console.log(includes40);
+  console.log(firstX + " this is the first X");
+  console.log(firstV + " this is first V");
+  console.log(firstI + " is the first I");
+
+  //to add 50
+  //to add 100
+  //to add 500
+  //to add 1000
   //creating condition where I can add everything easily
   //if no I's come before X or V
 
@@ -126,16 +160,17 @@ var romanToInt = function(s) {
 };
 
 // console.log(romanToInt("III") + " should be 3");
-console.log(romanToInt("IV") + " should be 4");
-console.log(romanToInt("IX") + " should be 9");
-// console.log(romanToInt("LVIII") + " should be 58");
-console.log(romanToInt("MCMXCIV") + " should be 1994");
-console.log(romanToInt("CD") + " should be 400");
-console.log(romanToInt("XIX") + " should be 19");
-// console.log(romanToInt("XLIV") + " should be 44");
-console.log(romanToInt("CDXLIV") + " should be 444");
+// console.log(romanToInt("IV") + " should be 4");
+// console.log(romanToInt("IX") + " should be 9");
+// // console.log(romanToInt("LVIII") + " should be 58");
+// console.log(romanToInt("MCMXCIV") + " should be 1994");
+// console.log(romanToInt("CD") + " should be 400");
+// console.log(romanToInt("XIX") + " should be 19");
+// // console.log(romanToInt("XLIV") + " should be 44");
+// console.log(romanToInt("CDXLIV") + " should be 444");
 console.log(romanToInt("XV") + " should be 15");
-console.log(romanToInt("M") + " should be 1000");
+// console.log(romanToInt("M") + " should be 1000");
+// console.log(romanToInt("XVII") + " should be 17");
 
 // Symbol       Value
 // I             1
