@@ -141,7 +141,7 @@ var romanToInt = function(s) {
 
     //to add 10
     if (firstX < firstI || firstI === -1) {
-      //works for 19 and doesn't mess up 444 but doesn't work for 15 for some reason
+      //works for 15 and 444 but not 19
       if (s.charAt(i) === "X" && includes40 === null) {
         sum += 10;
       }
