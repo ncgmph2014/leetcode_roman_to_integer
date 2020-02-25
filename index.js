@@ -216,14 +216,14 @@ var romanToInt = function(s) {
   if (firstC === -1) {
     for (let i = 0; i < s.length; i++) {
       //works for 15 and 444 but not 19
-      if (s.charAt(i) === "D") {
+      if (s.charAt(i) === "M") {
         sum += 1000;
       }
     }
   } else if (firstC !== -1) {
     for (let i = 0; i < firstC; i++) {
       //works for 15 and 444 but not 19
-      if (s.charAt(i) === "D") {
+      if (s.charAt(i) === "M") {
         sum += 1000;
       }
     }
