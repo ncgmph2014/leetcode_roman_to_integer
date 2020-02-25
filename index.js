@@ -4,7 +4,6 @@
  *
  */
 
-console.log("The html and js are connected");
 var romanToInt = function(s) {
   ///i need a function that tests whether
   //I comes before V or X
