@@ -242,9 +242,9 @@ var romanToInt = function(s) {
   return sum;
 };
 
-// console.log(romanToInt("III") + " should be 3");
-// console.log(romanToInt("IV") + " should be 4");
-// console.log(romanToInt("IX") + " should be 9");
+console.log(romanToInt("III") + " should be 3");
+console.log(romanToInt("IV") + " should be 4");
+console.log(romanToInt("IX") + " should be 9");
 console.log(romanToInt("LVIII") + " should be 58");
 console.log(romanToInt("MCMXCIV") + " should be 1994");
 console.log(romanToInt("CD") + " should be 400");
@@ -254,9 +254,9 @@ console.log(romanToInt("CDXLIV") + " should be 444");
 console.log(romanToInt("CLVII") + " should be 157");
 console.log(romanToInt("LXX") + " should be 70");
 console.log(romanToInt("MD"));
-// console.log(romanToInt("XV") + " should be 15");
-// console.log(romanToInt("M") + " should be 1000");
-// console.log(romanToInt("XVII") + " should be 17");
+console.log(romanToInt("XV") + " should be 15");
+console.log(romanToInt("M") + " should be 1000");
+console.log(romanToInt("XVII") + " should be 17");
 
 // Symbol       Value
 // I             1
