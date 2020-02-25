@@ -139,7 +139,7 @@ var romanToInt = function(s) {
       }
     }
   }
-  //to add 10
+  //to add 10 X and not 9 IX
   if (firstI === -1) {
     for (let i = lastC; i < s.length; i++) {
       //works for 15 and 444 but not 19
@@ -152,6 +152,24 @@ var romanToInt = function(s) {
       //works for 15 and 444 but not 19
       if (s.charAt(i) === "X" && includes40 === null) {
         sum += 10;
+      }
+    }
+  }
+
+  //to add 50(L) and not 40 XL;
+  //works for 58
+  if (firstX === -1) {
+    for (let i = lastC; i < s.length; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "L" && includes40 === null) {
+        sum += 50;
+      }
+    }
+  } else if (firstX !== -1) {
+    for (let i = lastC; i < firstX; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "L" && includes40 === null) {
+        sum += 50;
       }
     }
   }
@@ -171,18 +189,18 @@ var romanToInt = function(s) {
   return sum;
 };
 
-console.log(romanToInt("III") + " should be 3");
-console.log(romanToInt("IV") + " should be 4");
-console.log(romanToInt("IX") + " should be 9");
-// console.log(romanToInt("LVIII") + " should be 58");
-console.log(romanToInt("MCMXCIV") + " should be 1994");
-console.log(romanToInt("CD") + " should be 400");
-console.log(romanToInt("XIX") + " should be 19");
-// console.log(romanToInt("XLIV") + " should be 44");
+// console.log(romanToInt("III") + " should be 3");
+// console.log(romanToInt("IV") + " should be 4");
+// console.log(romanToInt("IX") + " should be 9");
+console.log(romanToInt("LVIII") + " should be 58");
+// console.log(romanToInt("MCMXCIV") + " should be 1994");
+// console.log(romanToInt("CD") + " should be 400");
+// console.log(romanToInt("XIX") + " should be 19");
+console.log(romanToInt("XLIV") + " should be 44");
 console.log(romanToInt("CDXLIV") + " should be 444");
-console.log(romanToInt("XV") + " should be 15");
-console.log(romanToInt("M") + " should be 1000");
-console.log(romanToInt("XVII") + " should be 17");
+// console.log(romanToInt("XV") + " should be 15");
+// console.log(romanToInt("M") + " should be 1000");
+// console.log(romanToInt("XVII") + " should be 17");
 
 // Symbol       Value
 // I             1
