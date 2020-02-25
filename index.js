@@ -72,6 +72,7 @@ var romanToInt = function(s) {
       lastC - lastX === 1
     ) {
       sum += 90;
+      includes90 = true;
     }
   }
 
@@ -180,21 +181,21 @@ var romanToInt = function(s) {
   }
 
   //to add 100 C not 90 XC
-  // if (firstX === -1) {
-  //   for (let i = lastM; i < s.length; i++) {
-  //     //works for 15 and 444 but not 19
-  //     if (s.charAt(i) === "C" && includes400 === null) {
-  //       sum += 100;
-  //     }
-  //   }
-  // } else if (firstX !== -1) {
-  //   for (let i = lastM; i < firstI; i++) {
-  //     //works for 15 and 444 but not 19
-  //     if (s.charAt(i) === "C" && includes400 === null) {
-  //       sum += 100;
-  //     }
-  //   }
-  // }
+  if (firstX === -1) {
+    for (let i = lastM; i < s.length; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "C" && includes400 === null) {
+        sum += 100;
+      }
+    }
+  } else if (firstX !== -1) {
+    for (let i = lastM; i < firstX; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "C" && includes400 === null) {
+        sum += 100;
+      }
+    }
+  }
   // console.log(includes40);
   // console.log(firstX + " this is the first X");
   // console.log(firstV + " this is first V");
