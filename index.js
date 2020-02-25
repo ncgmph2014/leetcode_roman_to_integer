@@ -196,6 +196,22 @@ var romanToInt = function(s) {
       }
     }
   }
+  //for 500 (D) not 400 (XD)
+  if (firstX === -1) {
+    for (let i = lastM; i < s.length; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "D" && includes400 === null) {
+        sum += 500;
+      }
+    }
+  } else if (firstX !== -1) {
+    for (let i = lastM; i < firstX; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "D" && includes400 === null) {
+        sum += 500;
+      }
+    }
+  }
   // console.log(includes40);
   // console.log(firstX + " this is the first X");
   // console.log(firstV + " this is first V");
@@ -221,6 +237,7 @@ console.log(romanToInt("XLIV") + " should be 44");
 console.log(romanToInt("CDXLIV") + " should be 444");
 console.log(romanToInt("CLVII") + " should be 157");
 console.log(romanToInt("LXX") + " should be 70");
+console.log(romanToInt("MD"));
 // console.log(romanToInt("XV") + " should be 15");
 // console.log(romanToInt("M") + " should be 1000");
 // console.log(romanToInt("XVII") + " should be 17");
