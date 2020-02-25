@@ -17,7 +17,8 @@ var romanToInt = function(s) {
   let sum = 0;
   let includes9 = null;
   let includes40 = null;
-
+  let includes90 = null;
+  let includes400 = null;
   let firstI = s.search("I"); //because I will forget what it's doing if I don't label it
   let firstV = s.search("V");
   let firstX = s.search("X");
@@ -83,6 +84,7 @@ var romanToInt = function(s) {
       lastD - firstC === 1
     ) {
       sum += 400;
+      includes400 = true;
     } else if (
       firstM - firstC === 1 ||
       firstM - lastC === 1 ||
@@ -158,6 +160,9 @@ var romanToInt = function(s) {
 
   //to add 50(L) and not 40 XL;
   //works for 58
+  //may want to add examples to see if it works
+  //158
+  //add 80
   if (firstX === -1) {
     for (let i = lastC; i < s.length; i++) {
       //works for 15 and 444 but not 19
@@ -174,12 +179,27 @@ var romanToInt = function(s) {
     }
   }
 
+  //to add 100 C not 90 XC
+  // if (firstX === -1) {
+  //   for (let i = lastM; i < s.length; i++) {
+  //     //works for 15 and 444 but not 19
+  //     if (s.charAt(i) === "C" && includes400 === null) {
+  //       sum += 100;
+  //     }
+  //   }
+  // } else if (firstX !== -1) {
+  //   for (let i = lastM; i < firstI; i++) {
+  //     //works for 15 and 444 but not 19
+  //     if (s.charAt(i) === "C" && includes400 === null) {
+  //       sum += 100;
+  //     }
+  //   }
+  // }
   // console.log(includes40);
   // console.log(firstX + " this is the first X");
   // console.log(firstV + " this is first V");
   // console.log(firstI + " is the first I");
 
-  //to add 50
   //to add 100
   //to add 500
   //to add 1000
@@ -193,11 +213,13 @@ var romanToInt = function(s) {
 // console.log(romanToInt("IV") + " should be 4");
 // console.log(romanToInt("IX") + " should be 9");
 console.log(romanToInt("LVIII") + " should be 58");
-// console.log(romanToInt("MCMXCIV") + " should be 1994");
-// console.log(romanToInt("CD") + " should be 400");
-// console.log(romanToInt("XIX") + " should be 19");
+console.log(romanToInt("MCMXCIV") + " should be 1994");
+console.log(romanToInt("CD") + " should be 400");
+console.log(romanToInt("XIX") + " should be 19");
 console.log(romanToInt("XLIV") + " should be 44");
 console.log(romanToInt("CDXLIV") + " should be 444");
+console.log(romanToInt("CLVII") + " should be 157");
+console.log(romanToInt("LXX") + " should be 70");
 // console.log(romanToInt("XV") + " should be 15");
 // console.log(romanToInt("M") + " should be 1000");
 // console.log(romanToInt("XVII") + " should be 17");
