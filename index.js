@@ -139,6 +139,7 @@ var romanToInt = function(s) {
       }
     }
   }
+  //to add 10
   if (firstI === -1) {
     for (let i = lastC; i < s.length; i++) {
       //works for 15 and 444 but not 19
@@ -146,9 +147,7 @@ var romanToInt = function(s) {
         sum += 10;
       }
     }
-  }
-
-  if (firstI !== -1) {
+  } else if (firstI !== -1) {
     for (let i = lastC; i < firstI; i++) {
       //works for 15 and 444 but not 19
       if (s.charAt(i) === "X" && includes40 === null) {
@@ -156,7 +155,6 @@ var romanToInt = function(s) {
       }
     }
   }
-  //to add 10
 
   // console.log(includes40);
   // console.log(firstX + " this is the first X");
