@@ -139,9 +139,17 @@ var romanToInt = function(s) {
       }
     }
   }
+  if (firstI === -1) {
+    for (let i = lastC; i < s.length; i++) {
+      //works for 15 and 444 but not 19
+      if (s.charAt(i) === "X" && includes40 === null) {
+        sum += 10;
+      }
+    }
+  }
 
-  for (let i = lastC; i < s.length; i++) {
-    if (firstX < firstI || firstI === -1) {
+  if (firstI !== -1) {
+    for (let i = lastC; i < firstI; i++) {
       //works for 15 and 444 but not 19
       if (s.charAt(i) === "X" && includes40 === null) {
         sum += 10;
